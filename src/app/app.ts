@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { Header } from "./header/header";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterModule],
+  imports: [RouterModule, Header],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
