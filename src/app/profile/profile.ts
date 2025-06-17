@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class Profile {
   userName: string | null = '';
+  def_userName: string | null = '';
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -21,5 +22,9 @@ export class Profile {
         this.userName = params['name'];
       });
     }
+
+    this.route.data.subscribe(data => {
+      this.def_userName = data['def_name']
+    })
   }
 }

@@ -1,6 +1,36 @@
 <div class="container">
     <h1 class="my-3 p-3">This is Home Page!</h1>
-    <a [routerLink]="['profile', {name:'Mahi Mali'}]">Go to Profile Page</a>
-    <br>
-    <button class="btn btn-primary" (click)="goToProfile('Mahesh Mali')">Go to Profile Page</button>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <button class="btn btn-primary" [routerLink]="['profile', {name:'Mahi Mali'}]">Go to Profile Page By
+                    Param</button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary" (click)="goToProfile('Mahesh Mali')">Go to Profile Page By
+                    Query</button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary" routerLink="profile">Go to Profile Default Page</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container text-center">
+        <div class="card">
+            <div class="card-header">
+                <h1>Users List</h1>
+            </div>
+            <div class="card-body">
+                <div class="container text-center">
+                    <ul>
+                        @for (user of users; track user.id) {
+                        <li><a routerLink="user/{{user.id}}/{{user.name}}">{{user.name}}</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

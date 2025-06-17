@@ -5,6 +5,7 @@ import { EventHandl } from './event-handl/event-handl';
 import { TodoApp } from './todo-app/todo-app';
 import { PageNotFound } from './page-not-found/page-not-found';
 import { Profile } from './profile/profile';
+import { User } from './user/user';
 
 export const routes: Routes = [
   {
@@ -26,7 +27,11 @@ export const routes: Routes = [
   {
     path: 'profile',
     component: Profile, 
-    data: {name:'Default User'}
+    data: {def_name:'Default User'}
+  },
+  {
+    path: 'user/:id/:name',
+    component: User
   },
   { path: '**', component: PageNotFound },
 ];
